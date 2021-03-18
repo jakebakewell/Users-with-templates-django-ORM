@@ -1,0 +1,25 @@
+.wrapper{
+    margin: 0 auto;
+    width: 100rem;
+}
+
+.table{
+    width: 70rem;
+    margin: 0 auto;
+}
+
+#add-a-user{
+    border-top: black solid 0.15rem;
+}
+
+button{
+    margin: 1rem auto;
+}
+
+.user-form{
+    width: 60rem;
+    margin: 1rem auto;
+}
+label{
+    margin-right: -5rem;
+}

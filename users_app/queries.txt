@@ -1,0 +1,49 @@
+from users_app.models import *
+
+jake_bakewell = User(first_name="Jake",last_name="Bakewell",email_address="jakeb@dojo.com",age=25)
+
+hannah_bakewell = User(first_name="Hannah",last_name="Bakewell",email_address="hannahb@dojo.com",age=24)
+
+colin_bakewell = User(first_name="Colin",last_name="Bakewell",email_address="colinb@dojo.com",age=23)
+
+all_users = User.objects.all()
+
+print(all_users)
+output: <QuerySet []>
+
+for u in all_users:
+    print(u)
+output: blank
+
+print(jake_bakewell.first_name)
+output: Jake
+
+jake = User.objects.create(first_name = "Jake", last_name= "Bakewell", email_address = "Jake.com", age=20,)
+
+hannah = User.objects.create(first_name = "Hannah", last_name = "Bakewell", email_address = "Hannah.com", age=
+    ...: 50)
+
+colin = User.objects.create(first_name = "Colin", last_name = "Bakewell", email_address = "Colin.com", age=45)
+
+for user in all_users:
+    ...:     print(user)
+<Movie object: First Name: Jake, Last Name Bakewell, Email Jake.com, Age 20, ID (1)>
+<Movie object: First Name: Hannah, Last Name Bakewell, Email Hannah.com, Age 50, ID (2)>
+<Movie object: First Name: Colin, Last Name Bakewell, Email Colin.com, Age 45, ID (3)>
+
+first_user = User.objects.first()
+print(first_user)
+<Movie object: First Name: Jake, Last Name Bakewell, Email Jake.com, Age 20, ID (1)>
+
+last_user = User.objects.last()
+print(last_user)
+<Movie object: First Name: Colin, Last Name Bakewell, Email Colin.com, Age 45, ID (3)>
+
+user_to_update = User.objects.get(id=3)
+user_to_update.last_name = "Pancakes"
+user_to_update.last_name
+Output: 'Pancakes'
+
+user_to_delete = User.objects.get(id=2)
+user_to_delete.delete()
+Output: (1, {'users_app.User': 1})
